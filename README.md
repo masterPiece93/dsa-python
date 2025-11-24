@@ -12,8 +12,4 @@ Trying to solve problems in majorly following languages :
 
 ### Linked List
 
-* Implementation
-
-- Python
-- GoLang
-- TypeScript
+* [Implementation](./linked_list/)
