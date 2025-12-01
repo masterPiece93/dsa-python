@@ -33,115 +33,71 @@
     - doubly linked list : elements can be accessed in either direction
       - FOr e.g : If i am on node `N` , I can access both `N-1` and `N+1` .
 
-* A Python List Implements for following `dunder` methods that give it's the features that we see in real life with python:`lists`
+**A Python List Implements for following `dunder` methods that give it's the features that we see in real life with python:`lists`**
   
-  ```python
-  def __rmul__(self):
-    """
-    """
-    ...
-  
-  def __mul__(self, value: int):
-    """
-    """
-    ...
-  
-  def __imul__(self, value: int) -> 'LinkedList':
-    """
-    """
-    ...
-  
-  def __add__(self, other: 'LinkedList') -> 'LinkedList':
-    """
-    """
-    ...
-    
-  def __iadd__(self, other: 'LinkedList') -> Self:
-    """
-    """
-    ...
-  
-  def __lt__(self, other: 'LinkedList') -> Optional[bool]:
-    """
-    """
-    ...
-  
-  def __ge__(self, other: 'LinkedList'):
-    """
-    """
-    ...
-    
-  def __gt__(self, other: 'LinkedList'):
-    """
-    """
-    ...
-    
-  def __le__(self, other: 'LinkedList'):
-    """
-    """
-    ...
-    
-  def __eq__(self, other: 'LinkedList'):
-    """
-    """
-    ...
-    
-  def __ne__(self, other: 'LinkedList'):
-    """
-    """
-    ...
-    
-  def __delitem__(self, index: int):
-    """
-    """
-    ...
-    
-  def __contains__(self, value: Union[Any, LinkedListNode]) -> bool:
-    """
-    """
-    ...
-    
-  def __getitem__(self, key):
-    """
-    """
-    ...
-    
-  def __setitem__(self):
-    """
-    """
-    ...
-    
-  def __iter__(self):
-    """
-    """
-    ...
-  
-  def __len__(self):
-    """
-    """
-    ...
-    
-  def __sizeof__(self):
-    """
-    """
-    ...
-    
-  def print_detailed_size_information(self):
-    """
-    """
-    ...
-    
-  def __reversed__(self):
-    """
-    """
-    ...
-    
-  def __str__(self) -> str:
-    """
-    Returns a string representation of the linked list.
-    
-    Returns:
-            str: The string representation of the linked list.
-    """
-    ...
-  ```
+* `def __rmul__(self): ...`
+
+
+* `def __mul__(self, value: int): ...`
+
+
+* `def __imul__(self, value: int) -> 'LinkedList': ...`
+
+
+* `def __add__(self, other: 'LinkedList') -> 'LinkedList': ...`
+
+
+* `def __iadd__(self, other: 'LinkedList') -> Self: ...`
+
+
+* `def __lt__(self, other: 'LinkedList') -> Optional[bool]: ...`
+
+
+* `def __ge__(self, other: 'LinkedList'): ...`
+
+
+* `def __gt__(self, other: 'LinkedList'): ...`
+
+
+* `def __le__(self, other: 'LinkedList'): ...`
+
+
+* `def __eq__(self, other: 'LinkedList'): ...`
+
+
+* `def __ne__(self, other: 'LinkedList'): ...`
+
+
+* `def __delitem__(self, index: int): ...`
+
+
+* `def __contains__(self, value: Union[Any, LinkedListNode]) -> bool:`
+
+
+* `def __getitem__(self, key): ...`
+
+* `def __setitem__(self): ...`
+
+
+* `def __iter__(self) -> Iterator: ...`
+
+
+* `def __len__(self) -> int: ...`
+
+
+* `def __sizeof__(self) -> int: ...`
+  - Returns total size of linked list
+
+
+* `def print_detailed_size_information(self): ...`
+  - Prints in detail - the size information of linked list
+
+
+* `def __reversed__(self): ...`
+  - Reverses a linked list nodes
+
+
+* `def __str__(self) -> str: ...`
+  - Returns a string representation of the linked list.
+
+
