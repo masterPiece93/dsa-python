@@ -51,12 +51,12 @@ class MemoryBlock:
             left (Optional[MemoryBlock]): The left memory block.
             right (Optional[MemoryBlock]): The right memory block.
         """
-        self._data = data
+        self._data: T = data
         self._left = left
         self._right = right
 
     @property
-    def data(self) -> 'MemoryBlock':
+    def data(self) -> T:
         """Gets the data stored in the memory block."""
         return self._data
 
