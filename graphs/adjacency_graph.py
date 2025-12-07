@@ -112,27 +112,7 @@ class AdjacencyGraph:
     def print(self):
         for k, v in self._store.items():
             print(k, f"{v} : {[str(_v) for _v in v._links]}")
-    
-    def bfs(self, source: Union[str, GraphNode]):
-        if not isinstance(source, GraphNode):
-            source = self._store[source]
-        # track the linear order of arrival of nodes in traversal
-        traversal_order_track: str = ''
-        
-        # visited flag check
-        visited: set[GraphNode] = set()
-        # visiting queue
-        to_visit: List[GraphNode] = [source]
-        # 
-        while to_visit:
-            node = to_visit.pop(0)
-            visited.add(node)
-            traversal_order_track += f"-> {node}"
-            neighbour_nodes = node.get_links()
-            for node in neighbour_nodes:
-                if node not in visited and node not in to_visit:
-                    to_visit.append(node)
-        return traversal_order_track.strip('->').strip(' ')
+
 
 def create_undirected_adjacency_list_graph(method: int = 1):
     """
@@ -215,111 +195,16 @@ def create_undirected_adjacency_list_graph(method: int = 1):
     
     return graph
 
+# main
+def main():
+    print('-'*10, '-'*10,)
+    graph = create_undirected_adjacency_list_graph(method=2)
+    graph.print()
+    print('-'*10, '-'*10,)
+    graph = create_undirected_adjacency_list_graph(method=2)
+    graph.print()
+    print('-'*10, '-'*10,)
 
-def bfs_test_graph_1():
-    """
-    We are creating a graph :
-        - is undirected
-        - is connected
-        - uses adjancency list
-        
-    Graph Representation :
-
-        ( 1 )-----( 2 )
-          |      /  |  \
-          |     /   |   \
-          |    /    |    \
-          |   /     |   ( 4 )
-          |  /      |
-        ( 0 )     ( 3 )
-
-    """
-    graph = AdjacencyGraph()
-    
-    # nodes
-    node_0 = GraphNode(0, None)
-    node_1 = GraphNode(1, None)
-    node_2 = GraphNode(2, None)
-    node_3 = GraphNode(3, None)
-    node_4 = GraphNode(4, None)
-    
-    # load the nodes
-    graph.add_node(node_0)
-    graph.add_node(node_1)
-    graph.add_node(node_2)
-    graph.add_node(node_3)
-    graph.add_node(node_4)
-
-    # undirected edges
-    graph.add_edge(1, 0)
-    graph.add_edge(1, 2)
-    graph.add_edge(0, 2)
-    graph.add_edge(2, 3)
-    graph.add_edge(2, 4)
-    
-    return graph
-
-def bfs_test_graph_2():
-    """
-    We are creating a graph :
-        - is undirected
-        - is connected
-        - uses adjancency list
-        
-    Graph Representation :
-
-                    ( 0 )
-                    / | \
-                   /  |  \
-                  /   |   \
-                 /    |    \
-                /     |     \
-             ( 2 )  ( 3 )  ( 1 )
-               |
-               |
-               |
-             ( 4 )
-    """
-    graph = AdjacencyGraph()
-    
-    # nodes
-    node_0 = GraphNode(0, None)
-    node_1 = GraphNode(1, None)
-    node_2 = GraphNode(2, None)
-    node_3 = GraphNode(3, None)
-    node_4 = GraphNode(4, None)
-    
-    # load the nodes
-    graph.add_node(node_0)
-    graph.add_node(node_1)
-    graph.add_node(node_2)
-    graph.add_node(node_3)
-    graph.add_node(node_4)
-
-    # undirected edges
-    graph.add_edge(0, 2)
-    graph.add_edge(0, 3)
-    graph.add_edge(0, 1)
-    graph.add_edge(2, 4)
-    
-    return graph
-
+#entrypoint
 if __name__ == '__main__':
-
-    print('-'*10, '-'*10,)
-    graph = create_undirected_adjacency_list_graph(method=2)
-    graph.print()
-    print('-'*10, '-'*10,)
-    graph = create_undirected_adjacency_list_graph(method=2)
-    graph.print()
-    print('-'*10, '-'*10,)
-
-    graph = bfs_test_graph_1()
-    result = graph.bfs(0)
-    print('BFS of Graph 1 : ', result)
-
-    print('-'*10)
-
-    graph = bfs_test_graph_2()
-    result = graph.bfs(0)
-    print('BFS of Graph 2 : ', result)
+    main()

@@ -36,3 +36,51 @@ Comprehensive :
     - it can be `reward`
     - it can be `priority`
     - etc... etc...
+
+
+
+
+## BFS
+
+breadth first search
+
+> Slogan of Bfs : reach to the immmedeate neighbors first .
+
+```
+jo pehle mil jaye , usko pehle use kro
+```
+
+Run :
+
+```sh
+cd graphs # skip if already in that dir
+```
+
+```sh
+python3 -m traversal.bfs
+```
+
+## DFS
+
+depth first search
+
+> Slogan of Dfs : reach to the immmedeate neighbors first .
+
+```
+jo milta jaye , usko use kro aur ussi ke aage find kro
+```
+
+Run :
+
+```sh
+cd graphs # skip if already in that dir
+```
+
+```sh
+python3 -m traversal.dfs
+```
+
+
+## Study Links
+
+- [Graphs Traversals](https://www.puppygraph.com/blog/graph-traversal)
