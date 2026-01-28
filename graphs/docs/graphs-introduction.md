@@ -1,6 +1,6 @@
 # Graphs
 
-A network of nodes is called `Graph` .
+- A network of nodes is called `Graph` .
     - A node is a memory block containing data .
     - We Join and arrange this network in a fashion that suits & solves our problem .
 
@@ -25,8 +25,8 @@ Comprehensive :
 
 - directed & weighted graph
 - directed & un-weighted graph
-- un-directd & weighted graph
-- un-directd & un-weighted graph
+- un-directed & weighted graph
+- un-directed & un-weighted graph
 
 > weight is just an integer number , that act as a prefrencing/prioritising factor in quantitative calculations
 
