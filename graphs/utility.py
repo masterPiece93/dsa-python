@@ -1,17 +1,22 @@
 """
 Test Graphs for usage
+
+Here you'll get some graphs prepared for usage
+    in your main codebase
 """
-from adjacency_graph import GraphNode
+from adjacency_graph import GraphNode, AdjacencyGraph
 
 
 class FormulateAdjacencyGraph:
-    """
+    """Sample Graphs in Adjacency Format
+    ====================================
     Utility functions to arrange nodes in a
         adjancency graph for sample use . 
     """
     @staticmethod
-    def sample_1(graph):
-        """
+    def sample_1(graph: AdjacencyGraph):
+        """Sample Graph 1
+        =================
         We are creating a graph :
             - is undirected
             - is connected
@@ -53,8 +58,9 @@ class FormulateAdjacencyGraph:
         return graph
 
     @staticmethod
-    def sample_2(graph):
-        """
+    def sample_2(graph: AdjacencyGraph):
+        """Sample Graph 2
+        =================
         We are creating a graph :
             - is undirected
             - is connected
@@ -98,8 +104,9 @@ class FormulateAdjacencyGraph:
         return graph
 
     @staticmethod
-    def sample_3(graph):
-        """
+    def sample_3(graph: AdjacencyGraph):
+        """Sample Graph 3
+        =================
         We are creating a graph :
             - is undirected
             - is connected
