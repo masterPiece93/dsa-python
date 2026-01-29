@@ -13,3 +13,7 @@ Trying to solve problems in majorly following languages :
 ### Linked List
 
 * [Implementation](./linked_list/docs/linked-list.md)
+
+### Graphs
+
+* [Introduction](./graphs/docs/graphs-introduction.md)
