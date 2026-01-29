@@ -59,6 +59,7 @@ cd graphs # skip if already in that dir
 ```sh
 python3 -m traversal.bfs
 ```
+- it will show you the `bfs` traversal of all sample graphs in console
 
 ## DFS
 
@@ -79,6 +80,7 @@ cd graphs # skip if already in that dir
 ```sh
 python3 -m traversal.dfs
 ```
+- it will show you the `dfs` traversal of all sample graphs in console
 
 
 ## Study Links
