@@ -15,7 +15,8 @@ class FormulateAdjacencyGraph:
     """
     @staticmethod
     def sample_1(graph: AdjacencyGraph):
-        """Sample Graph 1
+        """
+        Sample Graph 1
         =================
         We are creating a graph :
             - is undirected
@@ -71,7 +72,8 @@ class FormulateAdjacencyGraph:
 
     @staticmethod
     def sample_2(graph: AdjacencyGraph):
-        """Sample Graph 2
+        """
+        Sample Graph 2
         =================
         We are creating a graph :
             - is undirected
@@ -80,17 +82,24 @@ class FormulateAdjacencyGraph:
             
         Graph Representation :
 
-                        ( 0 )
-                        / | \
-                       /  |  \
-                      /   |   \
-                     /    |    \
-                    /     |     \
-                ( 2 )  ( 3 )  ( 1 )
-                  |
-                  |
-                  |
-                ( 4 )
+                         +---+                
+                       - | 0 | -              
+                      /  +---+  \            -
+                     /     |     \            
+                    /      |      \           
+                   /       |       \          
+                  /        |        \         
+                 /         |         \        
+            +---+        +---+        +---+   
+            | 2 |        | 3 |        | 1 |   
+            +---+        +---+        +---+   
+              |                               
+              |                               
+              |                               
+            +---+                  -          
+            | 4 |                             
+            +---+            
+                         
         """
         
         # nodes
@@ -117,7 +126,8 @@ class FormulateAdjacencyGraph:
 
     @staticmethod
     def sample_3(graph: AdjacencyGraph):
-        """Sample Graph 3
+        """
+        Sample Graph 3
         =================
         We are creating a graph :
             - is undirected
@@ -126,19 +136,25 @@ class FormulateAdjacencyGraph:
             
         Graph Representation :
 
-                     ( 0 )
-                    -------
-                    /      \
-                   /        \
-                  /          \
-                 /            \
-                /              \
-              ( 1 )           ( 2 )
-               / \             / \
-              /   \           /   \
-             /     \         /     \
-          ( 3 )   ( 4 )    ( 5 )  ( 6 )
-
+                              +---+                     
+                            - | 0 | -                   
+                           /  +---+  \                  
+                          /           \                 
+                         /             \                
+                        /               \               
+                       /                 \              
+                      /                   \             
+                 +---+                     +---+        
+                 | 2 |                     | 1 |        
+                 ----+                     +---+        
+                /     \                   /     \       
+               /       \                 /       \      
+              /         \               /         \     
+             /           \             /           \    
+         +---+           +---+     +---+           +---+
+         | 3 |           | 4 |     | 5 |           | 6 |
+         +---+           +---+     +---+           +---+
+         
         """
         
         # nodes

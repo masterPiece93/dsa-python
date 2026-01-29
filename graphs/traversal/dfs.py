@@ -81,24 +81,27 @@ def main(representation: RepresentationOptions = RepresentationOptions.ADJACENCY
             
             graph = Graph()
             FormulateAdjacencyGraph.sample_1(graph)
+            print(FormulateAdjacencyGraph.sample_1.__doc__)
             result = graph.dfs(0)
-            print('DFS of Graph 1 : ', result)
+            print('\tDFS of Graph 1 : ', result)
             assert result == '0 -> 1 -> 2 -> 3 -> 4' # expected order of bfs from node 0
 
-            print('-'*10)
+            print('\n', '-'*10, '\n')
 
             graph = Graph()
             FormulateAdjacencyGraph.sample_2(graph)
+            print(FormulateAdjacencyGraph.sample_2.__doc__)
             result = graph.dfs(0)
-            print('DFS of Graph 2 : ', result)
+            print('\tDFS of Graph 2 : ', result)
             assert result == '0 -> 2 -> 4 -> 3 -> 1' # expected order of bfs from node 0
 
-            print('-'*10)
+            print('\n', '-'*10, '\n')
 
             graph = Graph()
             FormulateAdjacencyGraph.sample_3(graph)
+            print(FormulateAdjacencyGraph.sample_3.__doc__)
             result = graph.dfs(0)
-            print('DFS of Graph 3 : ', result)
+            print('\tDFS of Graph 3 : ', result)
             assert result == '0 -> 1 -> 3 -> 4 -> 2 -> 5 -> 6' # expected order of bfs from node 0
 
             print('\t\t--x--\n')

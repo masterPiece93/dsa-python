@@ -27,7 +27,7 @@ How we have implemented Adjacency List :
         on that node object , it appends it in it's list
 """
 from typing import Any, List, TypeVar, Dict, Union, ClassVar
-from graphs.constants import ADJACENCY_MATRIX
+from constants import ADJACENCY_MATRIX
 
 __all__ = [
     'GraphNode',
