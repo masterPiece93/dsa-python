@@ -26,42 +26,20 @@ How we have implemented Adjacency List :
     - whenever we want to add a node that connects , we call add method
         on that node object , it appends it in it's list
 """
-from typing import Any, List, TypeVar, Dict, Union, ClassVar
+from typing import Any, List, TypeVar, Dict, Union, ClassVar, NewType
 from constants import ADJACENCY_MATRIX
 
 __all__ = [
     'GraphNode',
-    'Graph'
+    'Graph',
+    'Mark',
+    'AdjacencyMatrix'
 ]
 
-
-# memory representation of graph vertice
-class GraphNode:
-
-    def __init__(self, label: str, data: Any):
-        self._label = label
-        self._data = data
-
-    @property
-    def data(self):
-        return self._data
-    
-    @property
-    def label(self):
-        return self._label
-
-    def __str__(self) -> str:
-        """Returns a string representation of the memory block."""
-        return f"{self._label}"
-    
-    def __repr__(self):
-        """Returns a detailed string representation of the memory block."""
-        return f"GraphNode({self._label}, data={self._data}"
-
-
+# Utiities
 class Mark:
     """
-    It represents/stores a True/False state .
+    It represents/stores a True/False state.
 
     - allows to display alternate symbol for True and False
     - provides standard methods for controlling True and False values
@@ -94,21 +72,65 @@ class Mark:
     
     def off(self):
         self._state = False
+
+
+# Custom Types
+class Types:
+    """Custom Types related to Graph Implementation"""
+    AdjacencyMatrix = NewType('AdjacencyMatrix', List[List[Mark]])
+
+
+# memory representation of graph vertice
+class GraphNode:
+
+    def __init__(self, label: str, data: Any):
+        self._label = label
+        self._data = data
+
+    @property
+    def data(self):
+        return self._data
     
+    @property
+    def label(self):
+        return self._label
+
+    def __str__(self) -> str:
+        """Returns a string representation of the memory block."""
+        return f"{self._label}"
+    
+    def __repr__(self):
+        """Returns a detailed string representation of the memory block."""
+        return f"GraphNode({self._label}, data={self._data}"
+
+
 # Graph
 class Graph:
 
-    def __init__(self, total_nodes: int = 1):
+    def __init__(self, total_nodes: int):
         self._name = ADJACENCY_MATRIX
         self._store: Dict[str, GraphNode] = {}
-        self._matrix: List[List[bool]] = [[ Mark() for __ in range(total_nodes)] for _ in range(total_nodes)]
-        self._label_index_map: Dict[str, str] = {}
-        self._counter = 0
+        self._matrix: Types.AdjacencyMatrix = [[ Mark() for __ in range(total_nodes)] for _ in range(total_nodes)]
+        self._label_index_map: Dict[str, int] = {}
+        self._index_label_map: Dict[int, str] = {}
+        self._counter: int = 0
 
     @property
     def store(self) -> Dict[str, GraphNode]:
         return self._store
 
+    @property
+    def matrix(self) -> Types.AdjacencyMatrix:
+        return self._matrix
+
+    @property
+    def label_index_map(self) -> Dict[str, int]:
+        return self._label_index_map
+    
+    @property
+    def index_label_map(self) -> Dict[int, str]:
+        return self._index_label_map
+    
     def add_node(self, node: GraphNode):
         if node.label in self._store:
             raise Exception('node already exists')
@@ -116,6 +138,9 @@ class Graph:
         self._store[node.label] = node
         # registers the label against the indexed in adjacency matrix
         self._label_index_map[node.label]=self._counter
+        # registers the index in adjacency matrix against the label of node
+        self._index_label_map[self._counter]=node.label
+        
         self._counter += 1
 
     def add_link(self, node_from: Union[str, GraphNode], node_to: Union[str, GraphNode]) -> None:
