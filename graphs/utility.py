@@ -4,7 +4,7 @@ Test Graphs for usage
 Here you'll get some graphs prepared for usage
     in your main codebase
 """
-from adjacency_graph import GraphNode, AdjacencyGraph
+from representations.adjacency_list import GraphNode, Graph as AdjacencyGraph
 
 
 class FormulateAdjacencyGraph:
