@@ -87,3 +87,18 @@ python3 -m traversal.dfs
 
 - [Graphs Traversals](https://www.puppygraph.com/blog/graph-traversal)
 - [visualization of graphs](https://visualgo.net/en/graphds)
+
+## Important Points
+
+- note the bfs traversal of **graph-sample-2** with **adjacency-matrix-1** and **adjacency-matrix-2**
+    ```sh
+    cd graphs && python3 -m traversal.bfs -al --sample-graph 2 && cd .. # Executing bfs for Adjacency List
+    ```
+    ```sh
+    cd graphs && python3 -m traversal.bfs -am --sample-graph 2 && cd .. # Executing bfs for Adjacency Matrix
+    ```
+    
+- you'll note that for the same graph , same bfs traversal gives different results - why?
+    - because , bfs traversal checks neighbours , but the order of neighbours can differ
+    - since adjacency list uses a list data structure for storing the neighbours , the order in which an edge is created between two node becomes priority . So, the node with which an edge is created first , will be counted first while retrieving neighbour nodes from list .
+    - whereas , in adjacency matrix , it initializes a matrix in the first place while the nodes are being added on to the graph . So the node which is added earlier , will be counted first while retrieving neighbour nodes.
