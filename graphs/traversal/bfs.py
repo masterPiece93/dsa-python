@@ -122,7 +122,7 @@ class BfsMixin:
 # ====
 def main(
     representation: RepresentationOptions = RepresentationOptions.ADJACENCY_LIST,
-    graph_name: str = ""
+    graph_name: str = "SAMPLE_1"
 ):
 
     print('\t\t-----')
@@ -168,7 +168,7 @@ def main(
                         assert result == '0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6' # expected order of bfs from node 0
 
                     case _:
-                        raise NotImplemented
+                        raise NotImplementedError
                     
         case RepresentationOptions.ADJACENCY_MATRIX:
 
