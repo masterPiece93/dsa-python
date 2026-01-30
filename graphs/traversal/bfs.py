@@ -224,9 +224,9 @@ group = parser.add_mutually_exclusive_group()
 group.add_argument("--adjacency-list", "-al", action="store_true", help="Use Adjacency List Representation")
 group.add_argument("--adjacency-matrix", "-am", action="store_true", help="Use Adjacency Matrix Representation")
 # sample graph to use
-supported_sample_graphs: list = ['1', '2', '3']
-default_graph: str = supported_sample_graphs[0]
-parser.add_argument("--sample-graph", choices=supported_sample_graphs, default=default_graph, help=f"The sample graph to use ( {', '.join(supported_sample_graphs)} ).")
+supported_sample_graphs_ids: list = ['1', '2', '3']
+default_graph: str = supported_sample_graphs_ids[0]
+parser.add_argument("--sample-graph", choices=supported_sample_graphs_ids, default=default_graph, help=f"The sample graph to use ( {', '.join(supported_sample_graphs)} ).")
 
 if __name__ == '__main__':
     args = parser.parse_args()
