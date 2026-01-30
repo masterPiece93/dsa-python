@@ -133,6 +133,7 @@ def main(
         
         case RepresentationOptions.ADJACENCY_LIST:
                 
+                # Creation
                 class Graph(AdjacencyListGraph, BfsMixin):
                     """
                     Test Graph
@@ -141,7 +142,8 @@ def main(
                     """
                 # Instantiation
                 graph = Graph()
-
+                
+                # Execution
                 match graph_name:
                     
                     case 'SAMPLE_1':
@@ -170,6 +172,7 @@ def main(
                     
         case RepresentationOptions.ADJACENCY_MATRIX:
 
+            # Creation
             class Graph(AdjacencyMatrixGraph, BfsMixin):
                 """
                 Test Graph
@@ -177,10 +180,11 @@ def main(
                     - Traversal : BFS
                 """
             
+            # Execution
             match graph_name:
 
                 case 'SAMPLE_1':
-                    graph = Graph(total_nodes=5)
+                    graph = Graph(total_nodes=5) # Instantiation
                     FormulateAdjacencyMatrixGraph.sample_1(graph)
                     print(FormulateAdjacencyMatrixGraph.sample_1.__doc__)
                     result = graph.bfs(0, graph)
@@ -189,7 +193,7 @@ def main(
                     assert result == expected, f"{expected=} , got {result}" # expected order of bfs from node 0
 
                 case 'SAMPLE_2':
-                    graph = Graph(total_nodes=5)
+                    graph = Graph(total_nodes=5) # Instantiation
                     graph = FormulateAdjacencyMatrixGraph.sample_2(graph)
                     print(FormulateAdjacencyMatrixGraph.sample_2.__doc__)
                     result = graph.bfs(0, graph)
@@ -198,7 +202,7 @@ def main(
                     assert result == expected, f"{expected=} , got {result}" # expected order of bfs from node 0
 
                 case 'SAMPLE_3':
-                    graph = Graph(total_nodes=7)
+                    graph = Graph(total_nodes=7) # Instantiation
                     graph = FormulateAdjacencyMatrixGraph.sample_3(graph)
                     print(FormulateAdjacencyMatrixGraph.sample_3.__doc__)
                     result = graph.bfs(0, graph)
@@ -214,16 +218,14 @@ def main(
 # entrypoint
 # ==========
 import argparse
-
 parser = argparse.ArgumentParser(description="BFS Traversal Demonstration on sample graphs")
-
 # representation group
 group = parser.add_mutually_exclusive_group()
 group.add_argument("--adjacency-list", "-al", action="store_true", help="Use Adjacency List Representation")
 group.add_argument("--adjacency-matrix", "-am", action="store_true", help="Use Adjacency Matrix Representation")
 # sample graph to use
-supported_sample_graphs = ['1', '2', '3']
-default_graph = supported_sample_graphs[0]
+supported_sample_graphs: list = ['1', '2', '3']
+default_graph: str = supported_sample_graphs[0]
 parser.add_argument("--sample-graph", choices=supported_sample_graphs, default=default_graph, help=f"The sample graph to use ( {', '.join(supported_sample_graphs)} ).")
 
 if __name__ == '__main__':
