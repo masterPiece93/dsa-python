@@ -29,6 +29,10 @@ __all__ = [
     'BfsMixin'
 ]
 
+# ----------------------------------------------------------------- #
+#                       Bfs Implementation                          #
+# ----------------------------------------------------------------- #
+
 class RepresentationOptions(str, Enum):
 
     ADJACENCY_LIST = CONST_ADJACENCY_LIST
@@ -115,7 +119,10 @@ class BfsMixin:
                 if node not in visited and node not in to_visit:
                     to_visit.append(node)
         return traversal_order_track.strip('->').strip(' ')
-    
+
+# ----------------------------------------------------------------- #
+#               Test the BfsMixin on live graphs                    #
+# ----------------------------------------------------------------- #
 
 # ====
 # main
